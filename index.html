@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shokun Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-mono scroll-smooth">
+
+    <style>
+        @keyframes gradient-x {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .animated-gradient {
+            background: linear-gradient(270deg, #6aa0f7, #2b7cfd, #3355ff);
+            background-size: 600% 600%;
+            animation: gradient-x 10s ease infinite;
+        }
+    </style>
+
+    <div class="h-screen flex flex-col text-white animated-gradient">
+        <!-- content -->
+        <!-- Header (อยู่ด้านบน ไม่ขยับ) -->
+        <header class="bg-gray-900 shadow w-full">
+            <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+                <h1 class="text-2xl font-bold text-blue-600">Aphinan Supapol</h1>
+
+                <button id="menu-btn" class="block md:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <nav id="menu" class="hidden md:flex md:items-center space-x-4 text-sm font-medium">
+                    <a href="#about" class="text-gray-100 hover:text-blue-500">About</a>
+                    <a href="#about" class="block text-white hover:text-blue-500">experience</a>
+                    <a href="#skills" class="text-gray-100 hover:text-blue-500">Skills</a>
+                    <a href="#projects" class="text-gray-100 hover:text-blue-500">Projects</a>
+                    <a href="#contact" class="text-gray-100 hover:text-blue-500">Contact</a>
+                </nav>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
+                <a href="#about" class="block text-white hover:text-blue-500">About</a>
+                <a href="#about" class="block text-white hover:text-blue-500">experience</a>
+                <a href="#skills" class="block text-white hover:text-blue-500">Skills</a>
+                <a href="#projects" class="block text-white hover:text-blue-500">Projects</a>
+                <a href="#contact" class="block text-white hover:text-blue-500">Contact</a>
+
+            </div>
+
+            <script>
+                const menuBtn = document.getElementById('menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            </script>
+        </header>
+
+        <!-- Content Centered -->
+        <section
+            class="min-h-screen flex flex-col md:flex-row items-center justify-center px-6 md:px-12 text-white gap-10">
+
+            <!-- รูป -->
+            <div class="flex-shrink-0">
+                <img src="/img/IMG_6074 2.JPG" alt="My Picture"
+                    class="rounded-lg w-48 md:w-60 shadow-xl ring-2 ring-white/40" />
+            </div>
+
+            <!-- ข้อความ -->
+            <div class="text-center md:text-left space-y-4">
+                <h1 class="text-3xl md:text-5xl font-bold">
+                    Hi, I'm <span class="text-yellow-300">Shokun</span> 👋
+                </h1>
+                <p class="text-lg font-medium">Software Engineering Student</p>
+                <p class="text-md font-light tracking-wide">Full Stack Developer in Training</p>
+
+                <div class="pt-4">
+                    <a href="#projects"
+                        class="bg-white text-indigo-700 px-4 py-2 rounded shadow hover:bg-gray-200 transition">
+                        See My Projects
+                    </a>
+
+                    <a href="https://github.com/shokun580"
+                        class="bg-white text-indigo-700 px-4 py-2 ml-5 rounded shadow hover:bg-gray-200 transition">
+                        My GitHub
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- About -->
+    <section id="about" class="py-12 px-4 max-w-4xl mx-auto mt-10">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">About Me</h3>
+        <p class="text-gray-100 leading-relaxed">
+            Hi! I'm <strong>Aphinan “Shokun” Supapol</strong>, a 2nd-year Software Engineering student from Thailand
+            🇹🇭.
+            I'm passionate about building meaningful software and solving real-world problems through technology.
+            Currently, I'm diving deep into full-stack development with tools like <strong>React</strong>,
+            <strong>Tailwind CSS</strong>,
+            <strong>Express.js</strong>, <strong>Prisma</strong>, and <strong>Laravel</strong>.
+            <br /><br />
+            My long-term vision is to become a Full Stack Developer → Project Manager → Startup Founder.
+            I also enjoy designing UI/UX, reviewing new technology, and catching Pokémon on the side 🧢⚡.
+        </p>
+    </section>
+
+    <section id="experience" class="py-12 px-4 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-10 text-blue-600">Work Experience</h3>
+
+        <div class="border-l-4 border-blue-500 sm:pl-6 pl-4 space-y-10 relative">
+
+            <!-- Timeline 1 -->
+            <div class="relative group">
+                <span class="uppercase text-xs text-blue-300 font-semibold tracking-wide">Camp Project</span>
+                <h4 class="text-xl font-semibold text-white group-hover:text-blue-400 transition">Software Developer
+                </h4>
+                <p class="text-sm text-gray-400">Jan 2025 – Mar 2025</p>
+                <p class="text-gray-100 mt-2 leading-relaxed">
+                    Team leader in a software camp project focused on developing a <strong>Volunteer Activity Logging
+                        Platform</strong>.
+                    Technologies used included <strong>Laravel</strong>, <strong>MySQL</strong>, and <strong>Bootstrap 5
+                        CSS</strong>.
+                    The system was developed in collaboration with <strong>ClickNext Co., Ltd. (Bangsaen
+                        branch)</strong>.
+                </p>
+            </div>
+
+            <!-- Timeline 2 -->
+            <div class="relative group">
+                <span class="uppercase text-xs text-purple-300 font-semibold tracking-wide">Internship</span>
+                <h4 class="text-xl font-semibold text-white group-hover:text-purple-300 transition">Documentation</h4>
+                <p class="text-sm text-gray-400">Aug 2024 – Oct 2024</p>
+                <p class="text-gray-100 mt-2 leading-relaxed">
+                    Contributed to producing user manuals and documentation for a <strong>learning management system
+                        (LMS)</strong>.
+                    Collaborated with the team at <strong>Worksway</strong> to deliver materials that improve user
+                    understanding and accessibility.
+                </p>
+            </div>
+
+            <!-- Timeline 3 -->
+            <div class="relative group">
+                <span class="uppercase text-xs text-green-300 font-semibold tracking-wide">Freelance</span>
+                <h4 class="text-xl font-semibold text-white group-hover:text-green-300 transition">Freelance Web
+                    Designer</h4>
+                <p class="text-sm text-gray-400">2023 – Present</p>
+                <p class="text-gray-100 mt-2 leading-relaxed">
+                    Designed the UX/UI for a software platform focused on <strong>connecting people for dining and
+                        travel activities</strong>.
+                    Prioritized modern layout, intuitive navigation, and user-centric interaction design.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Projects -->
+    <section id="projects" class="py-12 px-4 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">Projects</h3>
+        <ul class="space-y-4">
+            <li class="bg-white p-4 text-blue-500 shadow rounded">
+                <strong>📚 Classroom Booking System</strong> – Laravel-based system for scheduling and
+                energy-efficient
+                classroom use.
+            </li>
+            <li class="bg-white shadow text-blue-500 rounded p-4">
+                <strong>🤝 Volunteer Activity Platform</strong> – Web app to track and manage volunteer
+                activities
+                for
+                students and staff.
+            </li>
+        </ul>
+    </section>
+
+
+
+
+    <section id="skills" class="py-12 px-4 max-w-4xl mx-auto mt-10">
+        <h3 class="text-2xl font-bold mb-4 text-blue-600">Skills</h3>
+        <p class="text-gray-100 leading-relaxed">
+            I work with both frontend and backend tools. My main stack includes:<br /><br />
+            <strong>Languages & Core:</strong> JavaScript, Java, PHP, SQL, HTML5, CSS3<br />
+            <strong>Frontend:</strong> React, Tailwind CSS, Vite, Bootstrap<br />
+            <strong>Backend & Database:</strong> Node.js, Express.js, Laravel, Prisma, MySQL<br />
+            <strong>Tools:</strong> Git, GitHub, Docker, Figma, Postman, VS Code, Jira, Trello<br /><br />
+            I'm especially passionate about project planning, creating learning platforms, and building software that
+            scales.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <!-- ICON GRID -->
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold text-blue-600 mb-6 text-center transform transition hover:scale-110 duration-300">
+            🚀 Tech Stack</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
+
+
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="/img/181_Java_logo_logos-512.webp" class="w-12 h-12" alt="Java" />
+                <span class="mt-2 text-sm font-medium">Java</span>
+            </div>
+            <!-- JavaScript -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/javascript/F7DF1E" class="w-12 h-12" alt="JavaScript" />
+                <span class="mt-2 text-sm font-medium">JavaScript</span>
+            </div>
+            <!-- PHP -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/php/777BB4" class="w-12 h-12" alt="PHP">
+                <span class="mt-2 text-sm font-medium">PHP</span>
+            </div>
+            <!-- SQL -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/sqlite/1572B6" class="w-12 h-12" alt="SQL">
+                <span class="mt-2 text-sm font-medium">SQL</span>
+            </div>
+
+            <!-- HTML -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/html5/E34F26" class="w-12 h-12" alt="HTML5" />
+                <span class="mt-2 text-sm font-medium">HTML5</span>
+            </div>
+            <!-- CSS -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/css3/1572B6" class="w-12 h-12" alt="CSS3" />
+                <span class="mt-2 text-sm font-medium">CSS3</span>
+            </div>
+            <!-- Node.js -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/node.js/8CC84B" class="w-12 h-12" alt="Node.js" />
+                <span class="mt-2 text-sm font-medium">Node.js</span>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold text-blue-600 mb-6 text-center transform transition hover:scale-110 duration-300">
+            🖥️ Frontend</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
+
+            <!-- React -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/react/61DAFB" class="w-12 h-12" alt="React" />
+                <span class="mt-2 text-sm font-medium">React</span>
+            </div>
+            <!-- Tailwind CSS -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" class="w-12 h-12" alt="Tailwind CSS" />
+                <span class="mt-2 text-sm font-medium">Tailwind CSS</span>
+            </div>
+            <!-- Vite -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/vite/646CFF" class="w-12 h-12" alt="Vite" />
+                <span class="mt-2 text-sm font-medium">Vite</span>
+            </div>
+            <!-- Bootstrap -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/bootstrap/7952B3" class="w-12 h-12" alt="Bootstrap" />
+                <span class="mt-2 text-sm font-medium">Bootstrap</span>
+
+            </div>
+    </section>
+
+
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold text-blue-600 mb-6 text-center transform transition hover:scale-110 duration-300">
+            🔧 Backend & Frameworks</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
+            <!-- Express -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/express/fff" class="w-12 h-12" alt="Express">
+                <span class="mt-2 text-sm font-medium">Express.js</span>
+            </div>
+            <!-- Laravel -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/laravel/FF2D20" class="w-12 h-12" alt="Laravel" />
+                <span class="mt-2 text-sm font-medium">Laravel</span>
+            </div>
+            <!-- MYSQL -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/mysql/005C84" class="w-12 h-12" alt="MySQL">
+                <span class="mt-2 text-sm font-medium">MYSQL</span>
+            </div>
+            <!-- jQuery -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/jquery/0769AD" class="w-12 h-12" alt="jQuery">
+                <span class="mt-2 text-sm font-medium">jQuery</span>
+            </div>
+            <!-- Prisma -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/prisma/fff" class="w-12 h-12" alt="Prisma" />
+                <span class="mt-2 text-sm font-medium">Prisma</span>
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+
+    <section class="max-w-4xl mx-auto px-4 py-12">
+        <h2 class="text-2xl font-bold text-blue-600 mb-6 text-center transform transition hover:scale-110 duration-300">
+            🛠️ Tools</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 place-items-center">
+            <!-- Docker -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/docker/2496ED" class="w-12 h-12" alt="Docker" />
+                <span class="mt-2 text-sm font-medium">Docker</span>
+            </div>
+
+            <!-- Git -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/git/F05032" class="w-12 h-12" alt="Git" />
+                <span class="mt-2 text-sm font-medium">Git</span>
+            </div>
+
+            <!-- GitHub -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/github/fff" class="w-12 h-12" alt="GitHub" />
+                <span class="mt-2 text-sm font-medium">GitHub</span>
+            </div>
+
+            <!-- Figma -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/figma/F24E1E" class="w-12 h-12" alt="Figma" />
+                <span class="mt-2 text-sm font-medium">Figma</span>
+            </div>
+
+            <!-- Postman -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/postman/FF6C37" class="w-12 h-12" alt="Postman" />
+                <span class="mt-2 text-sm font-medium">Postman</span>
+            </div>
+            <!-- Trello -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/trello/0052CC" class="w-12 h-12" alt="Trello" />
+                <span class="mt-2 text-sm font-medium">Trello</span>
+            </div>
+            <!-- jira -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="https://cdn.simpleicons.org/jira/0052CC" class="w-12 h-12" alt="Jira">
+                <span class="mt-2 text-sm font-medium">Jira</span>
+            </div>
+            <!-- Vscode -->
+            <div class="flex flex-col items-center transform transition hover:scale-110 duration-300">
+                <img src="/img/Visual_Studio_Code_1.35_icon.svg.png" class="w-12 h-12" alt="VS Code">
+                <span class="mt-2 text-sm font-medium">VS Code</span>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+
+    <div class="bg-blue-500 text-gray-100 mt-10">
+        <section id="contact" class="py-12 px-4 max-w-4xl mx-auto text-center">
+            <h3 class="text-2xl font-bold mb-4 text-blue-100">Contact</h3>
+            <p>📧 Email: <strong><a href="mailto:shokunsupapol@gmail.com"
+                        class="text-blue-100">shokunsupapol@gmail.com</a></strong></p>
+            <p>📸 Instagram: <strong><a href="https://instagram.com/shokunnnnnnnnnnnn"
+                        class="text-blue-100">@shokunnnnnnnnnnnn</a></strong></p>
+            <p>💼 GitHub: <strong><a href="https://github.com/shokun580" class="text-blue-100">shokun580</a></strong>
+            </p>
+        </section>
+
+        <footer class="text-center py-6 text-sm text-gray-100">
+            © 2025 Aphinan Supapol | Powered by Tailwind CSS
+        </footer>
+
+    </div>
+</body>
+
+</html>
